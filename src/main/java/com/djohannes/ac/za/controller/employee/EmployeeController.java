@@ -31,7 +31,7 @@ public class EmployeeController
 
 
     public void create() {
-        Employee employee = EmployeeFactory.getEmployee("Dimitri", "Johannes", "0824512653", "dimitri.johannes@gmail.com");
+        Employee employee = EmployeeFactory.getEmployee("Dimitri", "Johannes");
         employeeService.create(employee);
 
         EmployeeGender employeeGender = EmployeeGenderFactory.getEmployeeGender("123", "456");

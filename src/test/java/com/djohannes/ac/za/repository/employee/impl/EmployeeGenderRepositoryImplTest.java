@@ -3,10 +3,7 @@ package com.djohannes.ac.za.repository.employee.impl;
 import com.djohannes.ac.za.domain.employee.EmployeeGender;
 import com.djohannes.ac.za.factory.employee.EmployeeGenderFactory;
 import com.djohannes.ac.za.repository.employee.EmployeeGenderRepository;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.FixMethodOrder;
-import org.junit.Test;
+import org.junit.*;
 import org.junit.runners.MethodSorters;
 
 import java.util.Set;
@@ -56,6 +53,7 @@ public class EmployeeGenderRepositoryImplTest {
         Assert.assertSame(savedEmployeeGender, readEmployeeGender);
     }
 
+    @Ignore
     @Test
     public void dUpdate()
     {

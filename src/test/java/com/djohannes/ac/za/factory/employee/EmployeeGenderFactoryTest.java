@@ -14,7 +14,7 @@ public class EmployeeGenderFactoryTest {
     @Test
     public void getEmployeeGender()
     {
-        Employee employee = EmployeeFactory.getEmployee("Dimitri", "Johannes", "0824512653", "dimitri.johannes@gmail.com");
+        Employee employee = EmployeeFactory.getEmployee("Dimitri", "Johannes");
         Gender gender = GenderFactory.getGender("Male");
 
         EmployeeGender employeeGender = EmployeeGenderFactory.getEmployeeGender("123", "456");

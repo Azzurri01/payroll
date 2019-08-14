@@ -3,10 +3,7 @@ package com.djohannes.ac.za.repository.employee.impl;
 import com.djohannes.ac.za.domain.employee.EmployeeRace;
 import com.djohannes.ac.za.factory.employee.EmployeeRaceFactory;
 import com.djohannes.ac.za.repository.employee.EmployeeRaceRepository;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.FixMethodOrder;
-import org.junit.Test;
+import org.junit.*;
 import org.junit.runners.MethodSorters;
 
 import java.util.Set;
@@ -56,6 +53,7 @@ public class EmployeeRaceRepositoryImplTest {
         Assert.assertSame(savedEmployeeRace, readEmployeeRace);
     }
 
+    @Ignore
     @Test
     public void dUpdate()
     {
