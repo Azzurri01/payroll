@@ -16,7 +16,7 @@ public class EmployeeRaceFactoryTest {
     @Test
     public void getEmployeeRace()
     {
-        Employee employee = EmployeeFactory.getEmployee("Dimitri", "Johannes", "0824512653", "dimitri.johannes@gmail.com");
+        Employee employee = EmployeeFactory.getEmployee("Dimitri", "Johannes");
         Race race = RaceFactory.getRace("Coloured");
 
         EmployeeRace employeeRace = EmployeeRaceFactory.getEmployeeRace("123","456");

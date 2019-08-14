@@ -27,7 +27,7 @@ public class EmployeeRepositoryImplTest {
     public void setUp() throws Exception
     {
         this.repository = EmployeeRepositoryImpl.getRepository();
-        this.employee = EmployeeFactory.getEmployee("Dimitri", "Johannes", "0824512653", "dimitri.johannes@gmail.com");
+        this.employee = EmployeeFactory.getEmployee("Dimitri", "Johannes");
     }
 
     @Test
@@ -59,15 +59,15 @@ public class EmployeeRepositoryImplTest {
     @Test
     public void dUpdate()
     {
-        String newTel = "0835133305";
+        String newSurname = "0835133305";
 
-        Employee desc = new Employee.Builder().copy(getSavedEmployee()).getTel(newTel).build();
+        Employee desc = new Employee.Builder().copy(getSavedEmployee()).getSurname(newSurname).build();
         System.out.println("In update, about_to_updated = " + desc);
 
         Employee updated = this.repository.update(desc);
         System.out.println("In update, updated = " + updated);
 
-        Assert.assertEquals(newTel, updated.getTel());
+        Assert.assertEquals(newSurname, updated.getSurname());
         eGetAll();
     }
 

@@ -4,15 +4,13 @@ import java.util.Objects;
 
 public class Employee
 {
-    private String id, name, surname, tel, email;
+    private String id, name, surname;
 
     private Employee(Builder builder)
     {
         this.id=builder.id;
         this.name=builder.name;
         this.surname=builder.surname;
-        this.tel=builder.tel;
-        this.email=builder.email;
     }
 
     public String getId()
@@ -30,26 +28,14 @@ public class Employee
         return surname;
     }
 
-    public String getTel()
-    {
-        return tel;
-    }
-
-    public String getEmail()
-    {
-        return email;
-    }
-
     public static class Builder {
-        private String id, name, surname, tel, email;
+        private String id, name, surname;
 
         public Builder copy(Employee employee)
         {
             this.id=employee.id;
             this.name=employee.name;
             this.surname=employee.surname;
-            this.tel=employee.tel;
-            this.email=employee.email;
             return this;
         }
 
@@ -68,17 +54,6 @@ public class Employee
             return this;
         }
 
-        public Builder getTel(String tel) {
-            this.tel = tel;
-            return this;
-        }
-
-        public Builder getEmail(String email)
-        {
-            this.email=email;
-            return this;
-        }
-
         public Employee build()
         {
             return new Employee(this);
@@ -91,8 +66,6 @@ public class Employee
                 "Id='" + id + '\'' +
                 "Name='" + name + '\'' +
                 "Surname='" + surname + '\'' +
-                "Tel='" + tel + '\'' +
-                "Email='" + email + '\'' +
                 '}';
     }
 

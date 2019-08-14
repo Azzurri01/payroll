@@ -11,11 +11,9 @@ public class EmployeeFactoryTest {
     @Test
     public void getEmployee()
     {
-        Employee employee = EmployeeFactory.getEmployee("Dimitri", "Johannes", "0824512653", "dimitri.johannes@gmail.com");
+        Employee employee = EmployeeFactory.getEmployee("Dimitri", "Johannes");
         Assert.assertNotNull(employee.getId());
         Assert.assertEquals("Dimitri", employee.getName());
         Assert.assertEquals("Johannes", employee.getSurname());
-        Assert.assertEquals("0824512653", employee.getTel());
-        Assert.assertEquals("dimitri.johannes@gmail.com", employee.getEmail());
     }
 }
