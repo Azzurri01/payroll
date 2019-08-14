@@ -29,21 +29,22 @@ public class EmployeeController
     private GenderService genderService = GenderServiceImpl.getService();
     private RaceService raceService = RaceServiceImpl.getService();
 
+    public Employee create(String name, String surname, String gen, String rac)
+    {
+        //Initialise objects
+        Employee employee = employeeService.create(EmployeeFactory.getEmployee(name, surname));
+        Gender gender = genderService.create(GenderFactory.getGender(gen));
+        Race race = raceService.create(RaceFactory.getRace(rac));
 
-    public void create() {
-        Employee employee = EmployeeFactory.getEmployee("Dimitri", "Johannes");
+        //Create Objects
         employeeService.create(employee);
-
-        EmployeeGender employeeGender = EmployeeGenderFactory.getEmployeeGender("123", "456");
-        employeeGenderService.create(employeeGender);
-
-        EmployeeRace employeeRace = EmployeeRaceFactory.getEmployeeRace("123", "456");
-        employeeRaceService.create(employeeRace);
-
-        Gender gender = GenderFactory.getGender("Male");
         genderService.create(gender);
-
-        Race race = RaceFactory.getRace("Coloured");
         raceService.create(race);
+
+        //Get employee gender and race
+        employeeGenderService.create(EmployeeGenderFactory.getEmployeeGender(employee.getId(), gender.getId()));
+        employeeRaceService.create(EmployeeRaceFactory.getEmployeeRace(employee.getId(), race.getId()));
+
+        return employee;
     }
 }
